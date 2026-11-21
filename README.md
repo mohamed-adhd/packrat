@@ -9,4 +9,4 @@ Cross-platform desktop archiving client (C# / Avalonia MVVM) with multi-algorith
 - LZ77 
 - RLE
 
-repo queued after oscuola
+repo state : in progress
