@@ -166,19 +166,22 @@
           <!-- Email -->
           <TextBlock Classes="label" Text="Email"/>
           <TextBox x:Name="EmailBox"
-                   Watermark="you@example.com"/>
+                   Watermark="you@example.com"
+                   Text="{Binding Email}"/>
 
           <!-- Password -->
           <TextBlock Classes="label" Text="Password" Margin="2,18,0,6"/>
           <TextBox x:Name="PasswordBox"
                    PasswordChar="●"
-                   Watermark="Enter your password"/>
+                   Watermark="Enter your password"
+                   Text="{Binding Password}"/>
 
           <!-- Login -->
           <Button x:Name="LoginButton"
                   Classes="primary"
                   Content="Log in"
-                  Margin="0,28,0,0"/>
+                  Margin="0,28,0,0"
+                  Click="{Binding LoginnCommand}"/>
 
           <!-- Sign up -->
           <StackPanel Orientation="Horizontal"
