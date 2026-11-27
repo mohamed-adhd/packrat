@@ -7,27 +7,45 @@
         x:Class="packrat.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
-        Title="packrat">
+        Title="packrat"
+        Width="1280" Height="720"
+        MinWidth="380" MinHeight="580"
+        WindowStartupLocation="CenterScreen">
+
+  <Window.Background>
+    <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%">
+      <GradientStop Color="#101A33" Offset="0"/>
+      <GradientStop Color="#0A1020" Offset="1"/>
+    </LinearGradientBrush>
+  </Window.Background>
 
   <Window.Resources>
-    <SolidColorBrush x:Key="Orange">#FF6A00</SolidColorBrush>
-    <SolidColorBrush x:Key="OrangeHover">#FF8A33</SolidColorBrush>
-    <SolidColorBrush x:Key="OrangePressed">#D95800</SolidColorBrush>
-    <SolidColorBrush x:Key="Panel">#111111</SolidColorBrush>
-    <SolidColorBrush x:Key="Field">#1A1A1A</SolidColorBrush>
-    <SolidColorBrush x:Key="Line">#2E2E2E</SolidColorBrush>
-    <SolidColorBrush x:Key="Muted">#9A9A9A</SolidColorBrush>
+    <!-- Soft amber-orange instead of neon -->
+    <SolidColorBrush x:Key="Orange">#EE8A3C</SolidColorBrush>
+    <SolidColorBrush x:Key="OrangeHover">#F59E58</SolidColorBrush>
+    <SolidColorBrush x:Key="OrangePressed">#D4722A</SolidColorBrush>
+
+    <!-- Navy surfaces -->
+    <SolidColorBrush x:Key="Panel">#131D36</SolidColorBrush>
+    <SolidColorBrush x:Key="Field">#18243F</SolidColorBrush>
+    <SolidColorBrush x:Key="Line">#25355A</SolidColorBrush>
+    <SolidColorBrush x:Key="LineHover">#3A4D7A</SolidColorBrush>
+
+    <!-- Text -->
+    <SolidColorBrush x:Key="TextMain">#EEF2FA</SolidColorBrush>
+    <SolidColorBrush x:Key="Muted">#8E9BBA</SolidColorBrush>
+    <SolidColorBrush x:Key="Ink">#0A1020</SolidColorBrush>
   </Window.Resources>
 
   <Window.Styles>
 
-    <!-- Text fields: dark fill, orange border on focus -->
+    <!-- Text fields -->
     <Style Selector="TextBox">
-      <Setter Property="Foreground" Value="White"/>
+      <Setter Property="Foreground" Value="{StaticResource TextMain}"/>
       <Setter Property="CaretBrush" Value="{StaticResource Orange}"/>
-      <Setter Property="SelectionBrush" Value="#99FF6A00"/>
+      <Setter Property="SelectionBrush" Value="#66EE8A3C"/>
       <Setter Property="Padding" Value="14,12"/>
-      <Setter Property="CornerRadius" Value="8"/>
+      <Setter Property="CornerRadius" Value="10"/>
       <Setter Property="BorderThickness" Value="1.5"/>
       <Setter Property="FontSize" Value="15"/>
       <Setter Property="MinHeight" Value="48"/>
@@ -39,39 +57,38 @@
     </Style>
     <Style Selector="TextBox:pointerover /template/ Border#PART_BorderElement">
       <Setter Property="Background" Value="{StaticResource Field}"/>
-      <Setter Property="BorderBrush" Value="#555555"/>
+      <Setter Property="BorderBrush" Value="{StaticResource LineHover}"/>
     </Style>
     <Style Selector="TextBox:focus /template/ Border#PART_BorderElement">
       <Setter Property="Background" Value="{StaticResource Field}"/>
       <Setter Property="BorderBrush" Value="{StaticResource Orange}"/>
     </Style>
     <Style Selector="TextBox /template/ TextBlock#PART_Watermark">
-      <Setter Property="Foreground" Value="#6A6A6A"/>
+      <Setter Property="Foreground" Value="#5C6A8C"/>
     </Style>
 
     <!-- Field labels -->
     <Style Selector="TextBlock.label">
-      <Setter Property="Foreground" Value="#D6D6D6"/>
+      <Setter Property="Foreground" Value="#C5CEE3"/>
       <Setter Property="FontSize" Value="13"/>
-      <Setter Property="FontWeight" Value="SemiBold"/>
+      <Setter Property="FontWeight" Value="Medium"/>
       <Setter Property="Margin" Value="2,0,0,6"/>
     </Style>
 
-    <!-- Primary orange button -->
+    <!-- Primary button -->
     <Style Selector="Button.primary">
       <Setter Property="HorizontalAlignment" Value="Stretch"/>
       <Setter Property="HorizontalContentAlignment" Value="Center"/>
       <Setter Property="VerticalContentAlignment" Value="Center"/>
       <Setter Property="MinHeight" Value="50"/>
-      <Setter Property="CornerRadius" Value="8"/>
-      <Setter Property="FontSize" Value="16"/>
-      <Setter Property="FontWeight" Value="Bold"/>
-      <Setter Property="Foreground" Value="#000000"/>
+      <Setter Property="CornerRadius" Value="10"/>
+      <Setter Property="FontSize" Value="15"/>
+      <Setter Property="FontWeight" Value="SemiBold"/>
       <Setter Property="Cursor" Value="Hand"/>
     </Style>
     <Style Selector="Button.primary /template/ ContentPresenter#PART_ContentPresenter">
       <Setter Property="Background" Value="{StaticResource Orange}"/>
-      <Setter Property="Foreground" Value="#000000"/>
+      <Setter Property="Foreground" Value="{StaticResource Ink}"/>
       <Setter Property="BorderThickness" Value="0"/>
       <Setter Property="Transitions">
         <Transitions>
@@ -81,14 +98,14 @@
     </Style>
     <Style Selector="Button.primary:pointerover /template/ ContentPresenter#PART_ContentPresenter">
       <Setter Property="Background" Value="{StaticResource OrangeHover}"/>
-      <Setter Property="Foreground" Value="#000000"/>
+      <Setter Property="Foreground" Value="{StaticResource Ink}"/>
     </Style>
     <Style Selector="Button.primary:pressed /template/ ContentPresenter#PART_ContentPresenter">
       <Setter Property="Background" Value="{StaticResource OrangePressed}"/>
-      <Setter Property="Foreground" Value="#000000"/>
+      <Setter Property="Foreground" Value="{StaticResource Ink}"/>
     </Style>
 
-    <!-- Inline text link button -->
+    <!-- Inline link button -->
     <Style Selector="Button.link">
       <Setter Property="Padding" Value="0"/>
       <Setter Property="Margin" Value="0"/>
@@ -124,67 +141,68 @@
               Background="{StaticResource Panel}"
               BorderBrush="{StaticResource Line}"
               BorderThickness="1"
-              CornerRadius="14"
-              ClipToBounds="True">
+              CornerRadius="18"
+              BoxShadow="0 24 60 0 #66000000">
 
-        <Grid RowDefinitions="Auto,*">
+        <StackPanel Margin="34,36,34,34" Spacing="0">
 
-          <!-- Orange signature bar -->
-          <Border Grid.Row="0" Height="6" Background="{StaticResource Orange}"/>
+          <!-- Small accent mark -->
+          <Border Width="36" Height="4"
+                  CornerRadius="2"
+                  HorizontalAlignment="Left"
+                  Background="{StaticResource Orange}"
+                  Margin="0,0,0,18"/>
 
-          <StackPanel Grid.Row="1" Margin="32,32,32,32" Spacing="0">
+          <TextBlock Text="Welcome back"
+                     Foreground="{StaticResource TextMain}"
+                     FontSize="28"
+                     FontWeight="Bold"/>
+          <TextBlock Text="Sign in to continue to your account."
+                     Foreground="{StaticResource Muted}"
+                     FontSize="14"
+                     Margin="0,6,0,28"
+                     TextWrapping="Wrap"/>
 
-            <TextBlock Text="Welcome back"
-                       Foreground="White"
-                       FontSize="30"
-                       FontWeight="ExtraBold"/>
-            <TextBlock Text="Sign in to continue to your account."
+          <!-- Email -->
+          <TextBlock Classes="label" Text="Email"/>
+          <TextBox x:Name="EmailBox"
+                   Watermark="you@example.com"/>
+
+          <!-- Password -->
+          <TextBlock Classes="label" Text="Password" Margin="2,18,0,6"/>
+          <TextBox x:Name="PasswordBox"
+                   PasswordChar="●"
+                   Watermark="Enter your password"/>
+
+          <!-- Login -->
+          <Button x:Name="LoginButton"
+                  Classes="primary"
+                  Content="Log in"
+                  Margin="0,28,0,0"/>
+
+          <!-- Sign up -->
+          <StackPanel Orientation="Horizontal"
+                      HorizontalAlignment="Center"
+                      Spacing="6"
+                      Margin="0,22,0,0">
+            <TextBlock Text="Don't have an account?"
                        Foreground="{StaticResource Muted}"
                        FontSize="14"
-                       Margin="0,6,0,28"
-                       TextWrapping="Wrap"/>
-
-            <!-- Email -->
-            <TextBlock Classes="label" Text="Email"/>
-            <TextBox x:Name="EmailBox"
-                     Watermark="you@example.com"/>
-
-            <!-- Password -->
-            <TextBlock Classes="label" Text="Password" Margin="2,18,0,6"/>
-            <TextBox x:Name="PasswordBox"
-                     PasswordChar="●"
-                     Watermark="Enter your password"/>
-
-            <!-- Login -->
-            <Button x:Name="LoginButton"
-                    Classes="primary"
-                    Content="Log in"
-                    Margin="0,28,0,0"/>
-
-            <!-- Sign up -->
-            <StackPanel Orientation="Horizontal"
-                        HorizontalAlignment="Center"
-                        Spacing="6"
-                        Margin="0,22,0,0">
-              <TextBlock Text="Don't have an account?"
-                         Foreground="{StaticResource Muted}"
-                         FontSize="14"
-                         VerticalAlignment="Center"/>
-              <Button x:Name="SignUpButton"
-                      Classes="link"
-                      Content="Sign up"/>
-            </StackPanel>
-
+                       VerticalAlignment="Center"/>
+            <Button x:Name="SignUpButton"
+                    Classes="link"
+                    Content="Sign up"/>
           </StackPanel>
-        </Grid>
+
+        </StackPanel>
       </Border>
     </ScrollViewer>
 
     <!-- Footer -->
     <TextBlock Grid.Row="1"
                Text="made by mohamed-adhd"
-               Foreground="{StaticResource Orange}"
-               Opacity="0.85"
+               Foreground="{StaticResource Muted}"
+               Opacity="0.8"
                FontSize="12"
                HorizontalAlignment="Center"
                Margin="0,0,0,18"/>

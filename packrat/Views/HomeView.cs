@@ -1,12 +1,12 @@
 using Avalonia.Controls;
 
+
 namespace packrat.Views;
 
-public partial class LoginView : UserControl
+public partial class HomeView : UserControl
 {
-    public LoginView()
+    public HomeView()
     {
         InitializeComponent();
     }
-    
 }

@@ -31,7 +31,7 @@ build_property.EnableCodeStyleSeverity =
 [/home/bro/my-creations/packrat/packrat/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/bro/my-creations/packrat/packrat/Views/LoginView.axaml]
+[/home/bro/my-creations/packrat/packrat/Views/HomeView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [/home/bro/my-creations/packrat/packrat/Views/MainWindow.axaml]
