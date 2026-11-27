@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Nbv2/LMygDA=",
+  "dgSpecHash": "ReJ5ATVsu28=",
   "success": true,
   "projectFilePath": "/home/bro/my-creations/packrat/packrat/packrat.csproj",
   "expectedPackageFiles": [
@@ -36,7 +36,6 @@
     "/home/bro/.nuget/packages/skiasharp.nativeassets.webassembly/3.119.4/skiasharp.nativeassets.webassembly.3.119.4.nupkg.sha512",
     "/home/bro/.nuget/packages/skiasharp.nativeassets.win32/3.119.4/skiasharp.nativeassets.win32.3.119.4.nupkg.sha512",
     "/home/bro/.nuget/packages/system.diagnostics.diagnosticsource/11.0.0/system.diagnostics.diagnosticsource.11.0.0.nupkg.sha512",
-    "/home/bro/.nuget/packages/system.io.pipelines/8.0.0/system.io.pipelines.8.0.0.nupkg.sha512",
     "/home/bro/.nuget/packages/tmds.dbus.protocol/0.92.0/tmds.dbus.protocol.0.92.0.nupkg.sha512",
     "/home/bro/.nuget/packages/microsoft.aspnetcore.app.ref/10.0.12/microsoft.aspnetcore.app.ref.10.0.12.nupkg.sha512"
   ],
