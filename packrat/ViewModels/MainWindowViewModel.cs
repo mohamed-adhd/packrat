@@ -13,7 +13,7 @@ public partial class MainWindowViewModel : ViewModelBase
     [RelayCommand] 
     async void Loginn()
     {
-        if (await client.login(Email, Password)==false)
+        if (await client.login(Email, Password))
         {
             Current_page = new HomeViewModel();
         }

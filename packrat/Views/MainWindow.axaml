@@ -131,7 +131,7 @@
 
   </Window.Styles>
 
-  <Grid RowDefinitions="*,Auto">
+  <Grid RowDefinitions="*,Auto" IsVisible="{Binding Current_page, Converter={x:Static ObjectConverters.IsNull}}">
 
     <!-- Main content -->
     <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto">
@@ -209,6 +209,7 @@
                FontSize="12"
                HorizontalAlignment="Center"
                Margin="0,0,0,18"/>
+    <ContentControl Content="{Binding Current_page}"/>
 
   </Grid>
 </Window>

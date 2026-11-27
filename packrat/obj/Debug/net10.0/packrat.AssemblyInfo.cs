@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("packrat")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+32a63609c1282aa8643dbb95f17cf7f9a34e4d09")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b8d88dee89dcdc2784439b675890bb90bfc500e7")]
 [assembly: System.Reflection.AssemblyProductAttribute("packrat")]
 [assembly: System.Reflection.AssemblyTitleAttribute("packrat")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

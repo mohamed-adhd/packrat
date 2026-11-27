@@ -12,14 +12,10 @@ public class ApiClient
     {
         BaseAddress = new Uri("https://packrat-git-main-midouamdouni4-7219s-projects.vercel.app/")
     };
-    public async Task<bool?> login(string email, string password)
+    public async Task<bool> login(string email, string password)
     {
-        var body = new creds(email,password);
-
-        var response = await _http.PostAsJsonAsync("/login", body);
+        var response = await _http.PostAsJsonAsync("/login", new creds(email, password));
         Console.WriteLine($"login -> {(int)response.StatusCode}");
-        response.EnsureSuccessStatusCode();
-
-        return await response.Content.ReadFromJsonAsync<bool>();
-    } 
+        return response.IsSuccessStatusCode;
+    }
 }
