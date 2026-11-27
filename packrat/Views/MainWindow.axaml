@@ -181,7 +181,7 @@
                   Classes="primary"
                   Content="Log in"
                   Margin="0,28,0,0"
-                  Click="{Binding LoginnCommand}"/>
+                  Command="{Binding LoginnCommand}"/>
 
           <!-- Sign up -->
           <StackPanel Orientation="Horizontal"

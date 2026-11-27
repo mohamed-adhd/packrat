@@ -17,6 +17,7 @@ public class ApiClient
         var body = new creds(email,password);
 
         var response = await _http.PostAsJsonAsync("/login", body);
+        Console.WriteLine($"login -> {(int)response.StatusCode}");
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<bool>();
