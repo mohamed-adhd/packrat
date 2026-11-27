@@ -91,3 +91,5 @@
 /home/bro/my-creations/packrat/packrat/obj/Debug/net10.0/packrat.pdb
 /home/bro/my-creations/packrat/packrat/obj/Debug/net10.0/packrat.genruntimeconfig.cache
 /home/bro/my-creations/packrat/packrat/obj/Debug/net10.0/ref/packrat.dll
+/home/bro/my-creations/packrat/packrat/bin/Debug/net10.0/Npgsql.dll
+/home/bro/my-creations/packrat/packrat/bin/Debug/net10.0/System.Diagnostics.DiagnosticSource.dll
