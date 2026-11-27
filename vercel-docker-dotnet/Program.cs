@@ -14,7 +14,7 @@ app.MapGet("/", () => Results.Json(new { state = "online" }));
 
 
 
-app.MapPost("/login",async(NewItem body,NpgsqlDataSource db)=>{
+app.MapPost("/login",async(LoginRequest body,NpgsqlDataSource db)=>{
     await using var cmd = db.CreateCommand("SELECT COUNT(*) FROM users WHERE email = $1 AND password = $2;");
     cmd.Parameters.AddWithValue(body.email);  
     cmd.Parameters.AddWithValue(body.password);      
